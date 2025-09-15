@@ -1,24 +1,79 @@
-[
-{
-  "id": "lemania-1340",
-  "brand": "Lemania",
-  "model": "Automatic Chronograph",
-  "year": "1973",
-  "movement": "Cal. 1340 (Otomatik Kronograf)",
-  "diameter_mm": 41,
-  "material": "Paslanmaz Çelik",
-  "notes": "Lemania’nın ilk otomatik kronograf mekanizması Cal. 1340 ile donatılmış, 1970’ler tasarımına sahip ikonik bir model. Koyu mavi kadran, kontrast gri alt kadranlar ve turuncu merkez ibreleriyle yüksek okunabilirlik sunar. Tarih penceresi saat 3 yönünde yer alır. Bu kalibre daha sonra Omega Cal. 1040’a da temel olmuştur.",
-  "image": "images/images/IMG_7778.PNG"
-  },
-  {
-    "id": "img-7779",
-    "brand": "Rolex",
-    "model": "Datejust",
-    "year": "1972",
-    "movement": "Cal. 1570",
-    "diameter_mm": 36,
-    "material": "SS & WG bezel",
-    "notes": "Deneme görseli 2",
-    "image": "images/images/IMG_7779.PNG"
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saat Koleksiyonum – Sedat Sekmen</title>
+  <meta name="description" content="Aydınlık & minimal galeri – fotoğraflarım ve kısa teknik notlar.">
+  <style>
+    :root{
+      --bg:#fcfcfd; --card:#ffffff; --muted:#6b7280; --text:#111827; --border:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    header{padding:28px 20px 20px;border-bottom:1px solid var(--border);background:var(--card);position:sticky;top:0}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    h1{margin:0 0 6px;font-size:36px}
+    .subtitle{color:var(--muted);margin:0}
+    main{padding:26px 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .thumb{width:100%;height:200px;object-fit:cover;display:block}
+    .content{padding:14px}
+    .title{font-weight:700;margin-bottom:6px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:8px}
+    .desc{font-size:14px}
+    footer{color:var(--muted);text-align:center;padding:40px 0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Saat Koleksiyonum</h1>
+      <p class="subtitle">Aydınlık & minimal galeri – fotoğraflarım ve kısa teknik notlar</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="grid" class="grid"></section>
+    <footer>© Sedat Sekmen</footer>
+  </main>
+
+  <script>
+  async function loadWatches () {
+    try {
+      const res = await fetch('./watches.json', { cache: 'no-store' });
+      const data = await res.json(); // data = [ {...}, {...} ]
+
+      const grid = document.getElementById('grid');
+      grid.innerHTML = data.map(w => {
+        // notes alanı iki dilli olabilir: {tr: "...", en: "..."} veya düz string.
+        const note =
+          typeof w.notes === 'string'
+            ? w.notes
+            : (w.notes && (w.notes.tr || w.notes.en)) || '';
+
+        return `
+          <article class="card">
+            <img class="thumb" src="${w.image}" alt="${(w.brand||'') + ' ' + (w.model||'')}">
+            <div class="content">
+              <div class="title">${w.brand || ''} ${w.model || ''}</div>
+              <div class="meta">
+                ${(w.year || '')}${w.year && (w.movement || w.diameter_mm) ? ' • ' : ''}
+                ${(w.movement || '')}${w.diameter_mm ? ' • ' + w.diameter_mm + ' mm' : ''}
+              </div>
+              <div class="desc">${note}</div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    } catch (e) {
+      console.error(e);
+      document.getElementById('grid').innerHTML =
+        '<p>Watches could not be loaded. Make sure watches.json exists.</p>';
+    }
   }
-]
+  loadWatches();
+  </script>
+</body>
+</html>
