@@ -1,64 +1,24 @@
-{
-  "watches": [
-    {
-      "title": "Perfex Chronograph",
-      "subtitle": "Cal. Suisse • 17 Rubis • Incabloc",
-      "desc": "Vintage çift alt-kadran kronograf.",
-      "img": "perfex-chronograph.jpg"
-    },
-    {
-      "title": "Omega Seamaster 300",
-      "subtitle": "Ref. 166.024 • Big Triangle • Date",
-      "desc": "Dalgıç çerçeve, siyah kadran.",
-      "img": "seamaster-300-1.jpg"
-    },
-    {
-      "title": "Omega Seamaster 300",
-      "subtitle": "Ref. 166.024 • Auction Shot",
-      "desc": "NATO kayış üzerinde, tarih pencereli.",
-      "img": "seamaster-300-2.jpg"
-    },
-    {
-      "title": "Yema Rallye (Dial Macro)",
-      "subtitle": "Tachymètre • Panda Subdials",
-      "desc": "Yarış temalı kadran detayı.",
-      "img": "yema-rallye-macro.jpg"
-    },
-    {
-      "title": "Yema Rallye",
-      "subtitle": "Vintage Chronograph • Tachymètre",
-      "desc": "İkili alt-kadran, kırmızı şerit.",
-      "img": "yema-rallye.jpg"
-    },
-    {
-      "title": "Yema Rallye (Wrist Shot)",
-      "subtitle": "Daily Wear",
-      "desc": "Takimetre bezelli bilek çekimi.",
-      "img": "yema-rallye-wrist.jpg"
-    },
-    {
-      "title": "Breitling Chronograph",
-      "subtitle": "1970'ler • Kahverengi Kadran",
-      "desc": "Yastık kasa, beyaz alt-kadran.",
-      "img": "breitling-chrono-brown.jpg"
-    },
-    {
-      "title": "Omega Speedmaster Automatic",
-      "subtitle": "TV-Case • Integrated Bracelet",
-      "desc": "Otomatik Speedmaster.",
-      "img": "speedmaster-tvcase.jpg"
-    },
-    {
-      "title": "Breitling Chronograph (Altın Ton)",
-      "subtitle": "Kum Gri Kadran • Tarih",
-      "desc": "Vintage karakter.",
-      "img": "breitling-chrono-goldtone.jpg"
-    },
-    {
-      "title": "Heuer Chronograph",
-      "subtitle": "Altın Kasa • 3 Subdials",
-      "desc": "Klasik Heuer logosu.",
-      "img": "heuer-chronograph-gold.jpg"
-    }
-  ]
-}
+[
+  {
+    "id": "img-7778",
+    "brand": "Omega",
+    "model": "Seamaster",
+    "year": "1967",
+    "movement": "Cal. 552",
+    "diameter_mm": 42,
+    "material": "Stainless Steel",
+    "notes": "Deneme görseli 1",
+    "image": "images/images/IMG_7778.PNG"
+  },
+  {
+    "id": "img-7779",
+    "brand": "Rolex",
+    "model": "Datejust",
+    "year": "1972",
+    "movement": "Cal. 1570",
+    "diameter_mm": 36,
+    "material": "SS & WG bezel",
+    "notes": "Deneme görseli 2",
+    "image": "images/images/IMG_7779.PNG"
+  }
+]
