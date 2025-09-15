@@ -1,14 +1,14 @@
 [
-  {
-    "id": "img-7778",
-    "brand": "Omega",
-    "model": "Seamaster",
-    "year": "1967",
-    "movement": "Cal. 552",
-    "diameter_mm": 42,
-    "material": "Stainless Steel",
-    "notes": "Deneme görseli 1",
-    "image": "images/images/IMG_7778.PNG"
+{
+  "id": "lemania-1340",
+  "brand": "Lemania",
+  "model": "Automatic Chronograph",
+  "year": "1973",
+  "movement": "Cal. 1340 (Otomatik Kronograf)",
+  "diameter_mm": 41,
+  "material": "Paslanmaz Çelik",
+  "notes": "Lemania’nın ilk otomatik kronograf mekanizması Cal. 1340 ile donatılmış, 1970’ler tasarımına sahip ikonik bir model. Koyu mavi kadran, kontrast gri alt kadranlar ve turuncu merkez ibreleriyle yüksek okunabilirlik sunar. Tarih penceresi saat 3 yönünde yer alır. Bu kalibre daha sonra Omega Cal. 1040’a da temel olmuştur.",
+  "image": "images/images/IMG_7778.PNG"
   },
   {
     "id": "img-7779",
