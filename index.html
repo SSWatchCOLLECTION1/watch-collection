@@ -91,7 +91,7 @@
 <script>
 async function loadWatches() {
   try {
-    const res = await fetch('watches.json', {cache: 'no-store'});
+    const res = await fetch('./watches.json', {cache: 'no-store'});
     const data = await res.json();
     const grid = document.getElementById('grid');
     grid.innerHTML = data.watches.map(w => `
