@@ -89,27 +89,56 @@
 </main>
 
 <script>
-async function loadWatches() {
+<script>
+async function loadWatches () {
   try {
-    const res = await fetch('./watches.json', {cache: 'no-store'});
-    const data = await res.json();
+    const res = await fetch('./watches.json', { cache: 'no-store' });
+    const data = await res.json();   // data = [ {...}, {...} ]
+
     const grid = document.getElementById('grid');
-    grid.innerHTML = data.watches.map(w => `
+    grid.innerHTML = data.map(w => `
       <article class="card">
-        <img class="thumb" src="images/${w.img}" alt="${w.title}">
+        <img class="thumb" src="${w.image}" alt="${w.brand || ''} ${w.model || ''}">
         <div class="content">
-          <div class="title">${w.title}</div>
-          <div class="meta">${w.subtitle || ''}</div>
-          <div class="desc">${w.desc || ''}</div>
+          <div class="title">${w.brand || ''} ${w.model || ''}</div>
+          <div class="meta">${w.year || ''} • ${w.movement || ''}</div>
+          <div class="desc">${w.notes || ''}</div>
         </div>
       </article>
     `).join('');
   } catch (e) {
     console.error(e);
-    document.getElementById('grid').innerHTML = '<p>Watches could not be loaded. Make sure watches.json exists.</p>';
+    document.getElementById('grid').innerHTML =
+      '<p>Watches could not be loaded. Make sure watches.json exists.</p>';
   }
 }
 loadWatches();
+</script>
+  <script>
+async function loadWatches () {
+  try {
+    const res = await fetch('./watches.json', { cache: 'no-store' });
+    const data = await res.json();   // data = [ {...}, {...} ]
+
+    const grid = document.getElementById('grid');
+    grid.innerHTML = data.map(w => `
+      <article class="card">
+        <img class="thumb" src="${w.image}" alt="${w.brand || ''} ${w.model || ''}">
+        <div class="content">
+          <div class="title">${w.brand || ''} ${w.model || ''}</div>
+          <div class="meta">${w.year || ''} • ${w.movement || ''}</div>
+          <div class="desc">${w.notes || ''}</div>
+        </div>
+      </article>
+    `).join('');
+  } catch (e) {
+    console.error(e);
+    document.getElementById('grid').innerHTML =
+      '<p>Watches could not be loaded. Make sure watches.json exists.</p>';
+  }
+}
+loadWatches();
+</script>
 </script>
 </body>
 </html>
